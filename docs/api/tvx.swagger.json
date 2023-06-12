@@ -1,0 +1,491 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "api/tvx.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "ClickerBackend"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/float": {
+      "post": {
+        "operationId": "ClickerBackend_SetFloat",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/tvxSetFloatResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/tvxSetFloatRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ClickerBackend"
+        ]
+      }
+    },
+    "/float/{key}": {
+      "post": {
+        "operationId": "ClickerBackend_GetFloat",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/tvxGetFloatResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ClickerBackend"
+        ]
+      }
+    },
+    "/int": {
+      "post": {
+        "operationId": "ClickerBackend_SetInt",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/tvxSetIntResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/tvxSetIntRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ClickerBackend"
+        ]
+      }
+    },
+    "/int/{key}": {
+      "get": {
+        "operationId": "ClickerBackend_GetInt",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/tvxGetIntResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ClickerBackend"
+        ]
+      }
+    },
+    "/login": {
+      "post": {
+        "operationId": "ClickerBackend_Login",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/tvxLoginResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/tvxLoginRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ClickerBackend"
+        ]
+      }
+    },
+    "/product/available": {
+      "get": {
+        "operationId": "ClickerBackend_GetAvailableProductList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/tvxGetAvailableProductListResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "ClickerBackend"
+        ]
+      }
+    },
+    "/product/consumer": {
+      "get": {
+        "operationId": "ClickerBackend_GetConsumedProductList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/tvxGetConsumedProductListResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "ClickerBackend"
+        ]
+      },
+      "post": {
+        "operationId": "ClickerBackend_ConsumeProduct",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/tvxConsumeProductResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/tvxConsumeProductRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ClickerBackend"
+        ]
+      }
+    },
+    "/string": {
+      "post": {
+        "operationId": "ClickerBackend_SetString",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/tvxSetStringResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/tvxSetStringRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ClickerBackend"
+        ]
+      }
+    },
+    "/string/{key}": {
+      "get": {
+        "operationId": "ClickerBackend_GetString",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/tvxGetStringResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ClickerBackend"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "tvxConsumeProductRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "tvxConsumeProductResponse": {
+      "type": "object"
+    },
+    "tvxGetAvailableProductListResponse": {
+      "type": "object",
+      "properties": {
+        "products": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/tvxProduct"
+          }
+        }
+      }
+    },
+    "tvxGetConsumedProductListResponse": {
+      "type": "object",
+      "properties": {
+        "products": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/tvxProduct"
+          }
+        }
+      }
+    },
+    "tvxGetFloatResponse": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "tvxGetIntResponse": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "tvxGetStringResponse": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "tvxLoginRequest": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        }
+      }
+    },
+    "tvxLoginResponse": {
+      "type": "object",
+      "properties": {
+        "accessToken": {
+          "type": "string"
+        }
+      }
+    },
+    "tvxPaymentType": {
+      "type": "string",
+      "enum": [
+        "Unknown",
+        "SoftCurrency",
+        "HardCurrency",
+        "Real",
+        "Crypto",
+        "ADS",
+        "Fre"
+      ],
+      "default": "Unknown"
+    },
+    "tvxProduct": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "paymentType": {
+          "$ref": "#/definitions/tvxPaymentType"
+        },
+        "price": {
+          "type": "number",
+          "format": "double"
+        },
+        "isConsumable": {
+          "type": "boolean"
+        }
+      }
+    },
+    "tvxSetFloatRequest": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "value": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "tvxSetFloatResponse": {
+      "type": "object"
+    },
+    "tvxSetIntRequest": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "tvxSetIntResponse": {
+      "type": "object"
+    },
+    "tvxSetStringRequest": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "tvxSetStringResponse": {
+      "type": "object"
+    }
+  }
+}

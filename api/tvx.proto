@@ -1,0 +1,156 @@
+syntax = "proto3";
+
+package tvx;
+option go_package = "./pb";
+option csharp_namespace = "tvx.Clicker";
+
+import "google/api/annotations.proto";
+
+service ClickerBackend {
+  rpc Login(LoginRequest) returns (LoginResponse) {
+    option (google.api.http) = {
+      post: "/login"
+      body: "*"
+    };
+  }
+
+  rpc SetString(SetStringRequest) returns (SetStringResponse) {
+    option (google.api.http) = {
+      post: "/string"
+      body: "*"
+    };
+  }
+  rpc GetString(GetStringRequest) returns (GetStringResponse) {
+    option (google.api.http) = {
+      get: "/string/{key}"
+    };
+  }
+  rpc SetInt(SetIntRequest) returns (SetIntResponse) {
+    option (google.api.http) = {
+      post: "/int"
+      body: "*"
+    };
+  }
+  rpc GetInt(GetIntRequest) returns (GetIntResponse) {
+    option (google.api.http) = {
+      get: "/int/{key}"
+    };
+  }
+  rpc SetFloat(SetFloatRequest) returns (SetFloatResponse) {
+    option (google.api.http) = {
+      post: "/float"
+      body: "*"
+    };
+  }
+  rpc GetFloat(GetFloatRequest) returns (GetFloatResponse) {
+    option (google.api.http) = {
+      post: "/float/{key}"
+    };
+  }
+
+  rpc GetAvailableProductList(GetAvailableProductListRequest) returns (GetAvailableProductListResponse) {
+    option (google.api.http) = {
+      get: "/product/available"
+    };
+  }
+  rpc ConsumeProduct(ConsumeProductRequest) returns (ConsumeProductResponse) {
+    option (google.api.http) = {
+      post: "/product/consumer"
+      body: "*"
+    };
+  }
+  rpc GetConsumedProductList(GetConsumedProductListRequest) returns (GetConsumedProductListResponse) {
+    option (google.api.http) = {
+      get: "/product/consumer"
+    };
+  }
+}
+
+message LoginRequest {
+  string user_id = 1;
+}
+
+message LoginResponse {
+  string access_token = 1;
+}
+
+message SetStringRequest {
+  string key = 1;
+  string value = 2;
+}
+
+message SetStringResponse {}
+
+message GetStringRequest {
+  string key = 1;
+}
+
+message GetStringResponse {
+  string value = 1;
+}
+
+message SetIntRequest {
+  string key = 1;
+  int64 value = 2;
+}
+
+message SetIntResponse {}
+
+message GetIntRequest {
+  string key = 1;
+}
+
+message GetIntResponse {
+  int64 value = 1;
+}
+
+message SetFloatRequest {
+  string key = 1;
+  double value = 2;
+}
+
+message SetFloatResponse {}
+
+message GetFloatRequest {
+  string key = 1;
+}
+
+message GetFloatResponse {
+  double value = 1;
+}
+
+message Product {
+  string id = 1;
+  PaymentType payment_type = 2;
+  double price = 3;
+  bool is_consumable = 4;
+}
+
+enum PaymentType {
+  Unknown = 0;
+  SoftCurrency = 1;
+  HardCurrency = 2;
+  Real = 3;
+  Crypto = 4;
+  ADS = 5;
+  Fre = 6;
+}
+
+message GetAvailableProductListRequest {}
+
+message GetAvailableProductListResponse {
+  repeated Product products = 1;
+}
+
+message ConsumeProductRequest {
+  string id = 1;
+}
+
+message ConsumeProductResponse {}
+
+message GetConsumedProductListRequest {
+}
+
+message GetConsumedProductListResponse {
+  repeated Product products = 1;
+}

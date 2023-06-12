@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:13.3
+    environment:
+      POSTGRES_DB: "habrdb"
+      POSTGRES_USER: "habrpguser"
+      POSTGRES_PASSWORD: "pgpwd4habr"
+    ports:
+      - "5432:5432"
+
+  tvx:
+    image: tvx
+    command: bash -c "./bin/cmd"
+    ports:
+      - "9010:9010"
+      - "7777:7777"
+      - "5000:443"
