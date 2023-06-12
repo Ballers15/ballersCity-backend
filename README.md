@@ -1,17 +1,17 @@
-# tvx
-
-## Зависимости
+# Ballers City Backend
+  Game backend is built in golang and postgresql as DB and being  run in dockerized container 
+## Dependencies
 
 ```
 go install github.com/spf13/cobra-cli@latest
 go install github.com/luckybet100/protodeps@v1.0.3
 ```
-## Структура проекта
+## Project structure
 ```
--> internal // код не предназначенный для импорта извне
--> -> cmd // код непосредственного запуска с параметрами
--> api // protobuf+grpc файды
--> pb // реализация proto на go (не коммитится в git)
--> pkg // код который может импортироваться извне
--> cmd // скрипты для запуска задач (чтение из флагов и переменных окружения)
+-> internal // code not meant to be imported from outside
+-> -> cmd // direct run code with parameters
+-> api // protobuf+grpc files
+-> pb // implementation of proto on go (does not commit to git)
+-> pkg //code that can be imported from outside
+-> cmd // scripts for running tasks (reading from flags and environment variables)
 ```
