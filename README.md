@@ -15,3 +15,6 @@ go install github.com/luckybet100/protodeps@v1.0.3
 -> pkg //code that can be imported from outside
 -> cmd // scripts for running tasks (reading from flags and environment variables)
 ```
+## Run it
+ -> sudo docker-compose up
+  
